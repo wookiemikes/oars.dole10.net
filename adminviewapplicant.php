@@ -2,20 +2,20 @@
 
 session_start();
 
-include 'adminviewapplicant1.php';
 if (isset($_POST['view'])) {
 
 
-    $tin = $_POST['tin'];
+    $id_comp = $_POST['id_comp'];
 
     //$connect = mysqli_connect("localhost", "d0l310_aep", "d0l310_aep", "d0l310_aep");
     $connect = mysqli_connect("localhost", "root", "", "d0l310_aep");
-    $viewquery = "SELECT * FROM `aep_user_details` JOIN aep_user_details_2 ON aep_user_details.tin = aep_user_details_2.tin JOIN aep_user_details_3 ON aep_user_details_2.tin = aep_user_details_3.tin JOIN aep_user_employment on aep_user_details_3.tin = aep_user_employment.tin JOIN aep_user_status ON aep_user_status.tin = aep_user_employment.tin WHERE aep_user_details.tin = '" . $tin . "'";
+    $viewquery = "SELECT * FROM `aep_user_details` JOIN aep_user_details_2 ON aep_user_details.id_comp = aep_user_details_2.id_comp JOIN aep_user_details_3 ON aep_user_details_2.id_comp = aep_user_details_3.id_comp JOIN aep_user_employment on aep_user_details_3.id_comp = aep_user_employment.id_comp JOIN aep_user_status ON aep_user_status.id_comp = aep_user_employment.id_comp WHERE aep_user_details.id_comp = '" . $id_comp . "'";
     $viewresults = mysqli_query($connect, $viewquery);
 
     while ($row = mysqli_fetch_assoc($viewresults)) {
 
         $_SESSION["tin"] = $row["tin"];
+        $_SESSION["id_comp"] = $row["id_comp"];
         $_SESSION["fname"] = $row["fname"];
         $_SESSION["mname"] = $row["mname"];
         $_SESSION["lname"] = $row["lname"];
@@ -36,7 +36,7 @@ if (isset($_POST['view'])) {
         $_SESSION["course"] = $row["course"];
         $_SESSION["address_ph"] = $row["address_ph"];
         $_SESSION["contact_no"] = $row["contact_no"];
-        $_SESSION["email_add"] = $row["contact_no"];
+        $_SESSION["email_add"] = $row["email_add"];
         $_SESSION["permanent_add_abroad"] = $row["permanent_add_abroad"];
         $_SESSION["position"] = $row["position"];
         $_SESSION["assignment"] = $row["assignment"];
@@ -238,8 +238,8 @@ include 'adminlogout.php';
                         <div class="col-xl-8 col-lg-7">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">I. Personal Data</h6>
+                                <div class="card-header bg-primary py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h3 class="m-0 font-weight-bold text-white">I. Personal Data</h3>
 
                                 </div>
                                 <!-- Card Body -->
@@ -325,8 +325,8 @@ include 'adminlogout.php';
                         <div class="col-xl-4 col-lg-5">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Application Details</h6>
+                                <div class="card-header bg-primary py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h3 class="m-0 font-weight-bold text-white">Application Details</h3>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-700"></i>
@@ -346,43 +346,45 @@ include 'adminlogout.php';
                                     <div class="col-md-12">
                                         <table class=" table">
                                             <tr>
-                                                <td style="width: 50%;"><b>Date Created :</b></td>
-                                                <td style="width: 50%;"><?php echo $_SESSION['date_created']; ?></td>
+                                                <td style="width: 35%;"><b>Date Created :</b></td>
+                                                <td style="width: 65%;"><?php echo $_SESSION['date_created']; ?></td>
                                             </tr>
                                             <tr>
 
-                                                <td style="width: 50%;"><b>Application Type:</b></td>
-                                                <td style="width: 50%;"><?php echo $_SESSION['application_type']; ?></td>
+                                                <td style="width: 35%;"><b>Application Type:</b></td>
+                                                <td style="width: 65%;"><?php echo $_SESSION['application_type']; ?></td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 50%;"><b>Application Status:</b></td>
-                                                <td style="width: 50%;"><?php echo $_SESSION['user_status']; ?></td>
-
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 50%;"><b>Application Status:</b></td>
-                                                <td style="width: 50%;"><a href="<?php echo $_SESSION['gdrive_link']; ?>" target="_blank">GOOGLE DRIVE LINK</a></td>
+                                                <td style="width: 35%;"><b>Application Status:</b></td>
+                                                <td style="width: 65%;"><?php echo $_SESSION['user_status']; ?></td>
 
                                             </tr>
                                             <tr>
-                                                <td class="text-center" colspan="2"><button class="btn btn-block btn-info btn-sm" data-toggle="modal" data-target="#remarks">Remarks</button></td>
-
-
-                                            </tr>
-                                            <tr>
-
-                                                <td class="text-center" colspan="2"><button class="btn btn-block btn-warning btn-sm" data-toggle="modal" data-target="#foreval">For Evaluation</button></td>
-
+                                                <td style="width: 35%;"><b>Application Requirments Link:</b></td>
+                                                <td style="width: 65%;"><a href="<?php echo $_SESSION['gdrive_link']; ?>" target="_blank">GOOGLE DRIVE LINK</a></td>
 
                                             </tr>
                                             <tr>
-                                                <td class="text-center" colspan="2"><button class="btn btn-block btn-primary btn-sm" data-toggle="modal" data-target="#approve">Approve</button></td>
+                                                <td style="width: 35%;"><b>Application Number:</b></td>
+                                                <td style="width: 65%;"><?php echo $_SESSION['id_comp']?></td>
 
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center" colspan="2"><button class="btn btn-block btn-info btn-lg" data-toggle="modal" data-target="#remarks">Remarks</button></td>
 
 
                                             </tr>
                                             <tr>
-                                                <td class="text-center" colspan="2"><button class="btn btn-block btn-danger btn-sm" data-toggle="modal" data-target="#deny">Reject</button></td>
+
+                                                <td class="text-center" colspan="2"><button class="btn btn-block btn-warning btn-lg" data-toggle="modal" data-target="#foreval">For Evaluation</button></td>
+
+
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center" colspan="2"><button class="btn btn-block btn-success btn-lg" data-toggle="modal" data-target="#approve">Approve</button></td>
+
+
+
                                             </tr>
                                         </table>
                                     </div>
@@ -394,8 +396,8 @@ include 'adminlogout.php';
                         <div class="col-xl-8 col-lg-7">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">II. Present Employment</h6>
+                                <div class="card-header bg-primary py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h3 class="m-0 font-weight-bold text-white">II. Present Employment</h3>
 
                                 </div>
                                 <!-- Card Body -->
@@ -476,35 +478,6 @@ include 'adminlogout.php';
 
 
     <!-- Modal -->
-    <div class="modal fade" id="deny" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle"><b>Deny Applicant?</b></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form action="admindashboard.php" method="post">
-                    <div class="modal-body">
-
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1"><b>State Remarks:</b></label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="remarks1" placeholder="State Here"></textarea>
-                        </div>
-
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <input type="hidden" name="tin" value="<?php echo $_SESSION['tin']; ?>">
-
-                        <input type="submit" class="btn btn-danger" value="YES" name="deny">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
     <div class="modal fade" id="approve" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -514,8 +487,14 @@ include 'adminlogout.php';
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="admindashboard.php" method="post">
+                <form action="adminviewapplicant1.php" method="post">
                     <div class="modal-body">
+                        <input type="hidden" class="form-control" placeholder="update EIN" name="emailFrom" value="dole10.1020email@gmail.com" readonly>
+                        <br>
+                        <b>Receiver Email:</b>
+                        <input type="text" class="form-control" placeholder="update EIN" name="emailTo" value="<?php echo $_SESSION["email_add"] ?>" readonly>
+                        <br>
+                        <input type="hidden" class="form-control" placeholder="update EIN" name="subjectName" value="NOTICE : DOLE ALIEN EMPLOYMENT PERMIT APPLICATION STATUS" readonly>
                         <b>Update AEP Number:</b>
                         <input type="text" class="form-control" placeholder="update AEP Number" name="aep">
                         <br>
@@ -527,7 +506,7 @@ include 'adminlogout.php';
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <input type="hidden" name="tin" value="<?php echo $_SESSION['tin']; ?>">
+                        <input type="hidden" name="id_comp" value="<?php echo $_SESSION['id_comp']; ?>">
 
                         <input type="submit" class="btn btn-primary" value="YES" name="approved">
                     </div>
@@ -544,7 +523,7 @@ include 'adminlogout.php';
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="admindashboard.php" method="post">
+                <form action="adminviewapplicant1.php" method="post">
                     <div class="modal-body">
 
                         <br>

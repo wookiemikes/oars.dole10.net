@@ -180,6 +180,21 @@ include 'adminlogout.php';
 
                     <!-- Content Row -->
                     <div class="row">
+                        <div class="col-xl-12 col-md-6 mb-4">
+                                <div class="card bg-success border-left-light shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-sm font-weight-bold text-light text-uppercase mb-1">AEP</div>
+                                                <div class="h3 mb-0 font-weight-bold text-light">TOTAL APPROVED APPLICATIONS</div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <h1 class="text-light"><b>100</b></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
 
 
 
@@ -197,19 +212,19 @@ include 'adminlogout.php';
                         <div class="col-xl-12 col-lg-12">
                             <div class="card shadow mb-4">
                                 <Card Header - Dropdown ->
-                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">APPROVED APPLICANTS TABLE</h6>
+                                    <div class="card-header bg-success py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h4 class="m-0 font-weight-bold text-light">APPROVED APPLICANTS TABLE</h4>
 
                                     </div>
                                     <!-- Card Body-->
                                     <div class="card-body">
                                         <div class="table-responsive">
-                                            <table class="table table-bordered" id="adminapproved" width="100%" cellspacing="0">
+                                            <table class="table table-success table-bordered" id="adminapproved" width="100%" cellspacing="0">
                                                 <thead>
                                                     <tr>
                                                         <th>ID</th>
+                                                        <th>AEP ID</th>
                                                         <th>FIRST NAME</th>
-                                                        <th>MIDDLE NAME</th>
                                                         <th>LAST NAME</th>
                                                         <th>NATIONALITY</th>
                                                         <th>STATUS</th>

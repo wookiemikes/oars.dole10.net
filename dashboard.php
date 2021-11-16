@@ -210,7 +210,7 @@ include 'logout.php';
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-sm font-weight-bold text-success text-uppercase mb-1">AEP</div>
-                                                <div class="h3 mb-0 font-weight-bold text-gray-800">AEP LIST (APPROVED)</div>
+                                                <div class="h3 mb-0 font-weight-bold text-gray-800">MY APPROVED APPLICANTS</div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-list fa-2x text-gray-500"></i>
@@ -227,7 +227,7 @@ include 'logout.php';
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-sm font-weight-bold text-warning text-uppercase mb-1">AEP</div>
-                                                <div class="h3 mb-0 font-weight-bold text-gray-800">AEP LIST (PENDING)</div>
+                                                <div class="h3 mb-0 font-weight-bold text-gray-800">MY PENDING APPLICANTS</div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-spinner fa-2x text-gray-500"></i>

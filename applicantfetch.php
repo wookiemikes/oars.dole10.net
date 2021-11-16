@@ -4,7 +4,7 @@ session_start();
 $connect = mysqli_connect("localhost", "root", "", "d0l310_aep");
 
 
-$columns = array('user_det_id','fname','mname','lname','nationality', 'company_id', 'user_status','tin');
+$columns = array('id_comp,user_det_id','fname','mname','lname','nationality', 'company_id', 'user_status','tin');
 
 $query = "SELECT * FROM `aep_user_details` where company_id = '".$_SESSION['company_id']."' ";
 
@@ -40,11 +40,37 @@ $data = array();
 
 while ($row = mysqli_fetch_array($result)) {
 
+    $status = $row["user_status"];
+    if ($status = 'PENDING') {
+        $status = " ";
+        $tag = "PENDING";
+        $color = "#ffd044";
+    }elseif($status = 'FOR EVALUATION'){
+        $status = " ";
+        $tag = "FOR EVALUATION";
+        $color = "#ff8944";
+    }
+
+    
+
+    $appstatus = $row["application_type"];
+    if ($appstatus = 'PENDING') {
+        $appstatus = " ";
+        $tags = "NEW";
+        $colors = "#5044ff";
+    }elseif($appstatus = 'RENEWAL') {
+        $appstatus = " ";
+        $tags = "NEW";
+        $colors = "#34eb40";
+    }
+
     $sub_array = array();
-    $sub_array[] = $row["fname"] . $row["mname"] . $row["lname"];
+    $sub_array[] = $row["id_comp"];
+    $sub_array[] = $row["lname"];
+    $sub_array[] = $row["fname"];
     $sub_array[] = $row["nationality"];
-    $sub_array[] = $row["application_type"];
-    $sub_array[] = $row["user_status"];
+    $sub_array[] = "<b style='color:" . $colors . "'><i class='mdi mdi-alert-circle m-r-5'></i> " . $tags . "</b>";
+    $sub_array[] = "<b style='color:" . $color . "'><i style='color:#ffd044;' class='mdi mdi-alert-circle m-r-5'></i> " . $tag . "</b>";
     $sub_array[] = "<form action='dashboardviewapplicant.php' method='POST'>
                       <input type='hidden' name='id_comp' value='" . $row["id_comp"] . "'>
                       <input type='hidden' name='company_id' value='" . $row["company_id"] . "'>

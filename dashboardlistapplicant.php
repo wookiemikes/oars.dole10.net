@@ -246,20 +246,24 @@ include 'logout.php';
                                         <table class="table table-bordered" id="applicant" width="100%" cellspacing="0">
                                             <thead>
                                                 <tr>
-                                                    <th>Full Name</th>
-                                                    <th>Nationality</th>
-                                                    <th>Date Applied</th>
-                                                    <th>Status</th>
+                                                    <th>AEP REGISTRATION NO.</th>
+                                                    <th>LAST NAME</th>
+                                                    <th>FIRST NAME</th>
+                                                    <th>NATIONALITY</th>
+                                                    <th>APPLICATION TYPE</th>
+                                                    <th>STATUS</th>
                                                     <th>View (?)</th>
 
                                                 </tr>
                                             </thead>
                                             <tfoot>
                                                 <tr>
-                                                    <th>Full Name</th>
-                                                    <th>Nationality</th>
-                                                    <th>Date Applied</th>
-                                                    <th>Status</th>
+                                                    <th>AEP REGISTRATION NO.</th>
+                                                    <th>LAST NAME</th>
+                                                    <th>FIRST NAME</th>
+                                                    <th>NATIONALITY</th>
+                                                    <th>APPLICATION TYPE</th>
+                                                    <th>STATUS</th>
                                                     <th>View (?)</th>
 
                                                 </tr>

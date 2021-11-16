@@ -179,11 +179,40 @@ include 'adminlogout.php';
                     </div>
 
                     <!-- Content Row -->
-                    <div class="row">
+                     <div class="row">
+
+                        <div class="col-xl-6 col-md-6 mb-4">
+                            <div class="card bg-primary border-left-light shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-sm font-weight-bold text-light text-uppercase mb-1">AEP</div>
+                                                <div class="h3 mb-0 font-weight-bold text-light ">TOTAL APPLICATIONS RECEIVED</div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <h1 class="text-light"><b>100</b></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6 mb-4">
+                                <div class="card bg-warning border-left-dark shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-sm font-weight-bold text-dark text-uppercase mb-1">AEP</div>
+                                                <div class="h3 mb-0 font-weight-bold text-dark">TOTAL PENDING APPLICATIONS</div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <h1 class="text-dark"><b>100</b></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
 
 
-
-                        <!-- Pending Requests Card Example -->
 
                     </div>
 
@@ -195,19 +224,19 @@ include 'adminlogout.php';
                         <div class="col-xl-12 col-lg-12">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">PENDING APPLICANTS TABLE</h6>
+                                <div class="card-header bg-warning py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h3 class="m-0 font-weight-bold text-light">PENDING APPLICANTS TABLE</h3>
 
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <table class="table table-warning table-bordered" id="dataTable" width="100%" cellspacing="0">
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
+                                                    <th>AEP REGISTRATION NO.</th>
                                                     <th>FIRST NAME</th>
-                                                    <th>MIDDLE NAME</th>
                                                     <th>LAST NAME</th>
                                                     <th>NATIONALITY</th>
                                                     <th>STATUS</th>
@@ -218,8 +247,8 @@ include 'adminlogout.php';
                                             <tfoot>
                                                 <tr>
                                                     <th>ID</th>
+                                                    <th>AEP REGISTRATION NO.</th>
                                                     <th>FIRST NAME</th>
-                                                    <th>MIDDLE NAME</th>
                                                     <th>LAST NAME</th>
                                                     <th>NATIONALITY</th>
                                                     <th>STATUS</th>
