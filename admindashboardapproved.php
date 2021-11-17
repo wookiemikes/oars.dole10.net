@@ -223,7 +223,7 @@ include 'adminlogout.php';
                                                 <thead>
                                                     <tr>
                                                         <th>ID</th>
-                                                        <th>AEP ID</th>
+                                                        <th>AEP REGISTRATION NO.</th>
                                                         <th>FIRST NAME</th>
                                                         <th>LAST NAME</th>
                                                         <th>NATIONALITY</th>
@@ -235,8 +235,8 @@ include 'adminlogout.php';
                                                 <tfoot>
                                                     <tr>
                                                         <th>ID</th>
+                                                        <th>AEP REGISTRATION NO.</th>
                                                         <th>FIRST NAME</th>
-                                                        <th>MIDDLE NAME</th>
                                                         <th>LAST NAME</th>
                                                         <th>NATIONALITY</th>
                                                         <th>STATUS</th>

@@ -375,12 +375,6 @@ include 'adminlogout.php';
 
 
                                             </tr>
-                                            <tr>
-                                                <td class="text-center" colspan="2"><button class="btn btn-block btn-success btn-lg" data-toggle="modal" data-target="#approve">Approve</button></td>
-
-
-
-                                            </tr>
                                         </table>
                                     </div>
 
