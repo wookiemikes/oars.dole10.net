@@ -8,6 +8,7 @@ if (!isset($_SESSION['loggedIN'])) {
     exit();
 }
 include 'adminviewapplicant1.php';
+include 'adminreport.php';
 include 'adminlogout.php';
 
 
@@ -190,7 +191,7 @@ include 'adminlogout.php';
                                                 <div class="h3 mb-0 font-weight-bold text-light ">TOTAL APPLICATIONS RECEIVED</div>
                                             </div>
                                             <div class="col-auto">
-                                                <h1 class="text-light"><b>100</b></h1>
+                                                <h1 class="text-light"><b><?php echo $total_applicant2;?></b></h1>
                                             </div>
                                         </div>
                                     </div>
@@ -205,7 +206,7 @@ include 'adminlogout.php';
                                                 <div class="h3 mb-0 font-weight-bold text-dark">TOTAL PENDING APPLICATIONS</div>
                                             </div>
                                             <div class="col-auto">
-                                                <h1 class="text-dark"><b>100</b></h1>
+                                                <h1 class="text-dark"><b><?php echo $total_applicant;?></b></h1>
                                             </div>
                                         </div>
                                     </div>

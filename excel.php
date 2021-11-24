@@ -1,11 +1,11 @@
 <?php 
 session_start();
-require_once "Classes/PHPExcel.php";
+require "Classes/PHPExcel.php";
 include 'db/server.php';
 $export = new PHPExcel();
 
 $export->setActiveSheetIndex(0);
-$query = mysqli_query($connect, "SELECT * FROM `aep_user_details` JOIN aep_user_details_2 ON aep_user_details.tin = aep_user_details_2.tin JOIN aep_user_details_3 on aep_user_details_2.tin = aep_user_details_3.tin JOIN aep_user_employment ON aep_user_details_3.tin = aep_user_employment.tin JOIN aep_user_status ON aep_user_status.tin = aep_user_employment.tin WHERE aep_user_details.user_status = 'APPROVED'");
+$query = mysqli_query($connect, "SELECT * FROM `aep_user_details` JOIN aep_user_details_2 ON aep_user_details.id_comp = aep_user_details_2.id_comp JOIN aep_user_details_3 on aep_user_details_2.id_comp = aep_user_details_3.id_comp JOIN aep_user_employment ON aep_user_details_3.id_comp = aep_user_employment.id_comp JOIN aep_user_status ON aep_user_status.id_comp = aep_user_employment.id_comp WHERE aep_user_details.user_status = 'APPROVED'");
 $row = 3;
 while($list = mysqli_fetch_object($query)){
 	

@@ -243,13 +243,25 @@ if (isset($_POST['aep_prereg_company'])) { //user registering
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle"><img src="img/lglogo.png" style="margin: 2px 10px 2px 0px;" alt="" height="20px" width="20px">Register Company Account</h5>
+                        <h5 class="modal-title" id="exampleModalCenterTitle"><img src="assets/img/lglogo.png" style="margin: 2px 10px 2px 0px;" alt="" height="20px" width="20px">Register Company Account</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <form class="user" action="index.php" method="post">
                         <div class="modal-body">
+                            <div class="col-md-12 " style="text-align: center;text-justify: inter-word;">
+                                <b><p>DISCLAIMER</p></b>
+                            </div>
+                            <div class="col-md-12 " style="text-align: justify;text-justify: inter-word;">
+                                        <p>&nbsp;Please be informed that as an applicant of the various programs of the DOLE-X Regional Office, this office will require
+                                            your personal information that is protected under the Data Privacy Act of 2012</p><br>
+                                        <p>&nbsp;For this purpose, upon entering this DOLE-X Regional Office Online Portal you hereby freely give your iformal consent to allow this office
+                                            to collect and process your personal information.</p>
+                                        <p>&nbsp;Upon agreeing to the terms of this portal, and thus giving your consent, the regional office, including its authorized personnel will not be held
+                                            accountable or liable for the collection and processing of your personal information, to the extent that it is allowed by the existing laws and guidelines.</p>
+                            </div>
+                            <br>
                             <div class="col-md-12">
                                 <input type="hidden" class="form-control" name="id_diff" id="id_diff" value="<?php echo $output;?>" readonly>
                                 <div class="invalid-feedback">

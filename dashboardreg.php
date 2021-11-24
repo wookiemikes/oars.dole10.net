@@ -525,7 +525,15 @@ require 'dashboardregtest.php'; ?>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <h6>Visa:</h6>
-                                                    <input type="text" class="form-control" id="firstName" name="user_visa" required>
+                                                    <select name="user_visa" class="form-control" id="firstName">
+                                                        <option value="">Select One Below..</option>
+                                                        <option value="9(g) Pre-Arranged Employee Commercial Visa">9(g) Pre-Arranged Employee Commercial Visa</option>
+                                                        <option value="9(g) Pre-Arranged Employee Non-Commercial Visa">9(g) Pre-Arranged Employee Non-Commercial Visa</option>
+                                                        <option value="Special Non-Immigrant Visa or 47(A)(2)">Special Non-Immigrant Visa or 47(A)(2)</option>
+                                                        <option value="Special Non-Immigrant Visa under E.O. 226, as amended by R.A. 8756 (ROHQ)">Special Non-Immigrant Visa under E.O. 226, as amended by R.A. 8756 (ROHQ)</option>
+                                                        <option value="Temporary Visitor’s Visa for Business Purposes">Temporary Visitor’s Visa for Business Purposes</option>
+                                                        <option value="International Treaty Trader / Investor">International Treaty Trader / Investor</option>
+                                                    </select>
                                                     <div class="invalid-feedback">
                                                         This is required.
                                                     </div>
@@ -709,6 +717,7 @@ require 'dashboardregtest.php'; ?>
                                                                     <li>Scanned Copy of Certificate of Registration for DOLE Registration of Establishment (Rule 1020)</li>
                                                                     <li>Scanned Copy of passport withg updated/lastest stamped visa or Certificate of Recognition for Refugees or Stateless Persons (<i style="color: red;">present original passport for verification</i>)</li>
                                                                     <li>Duly Notarized ORoginal Copy of EMployment Contract/Letter of Appointment or Board Secretary's Certificate of Election</li>
+                                                                    <li>Lastest 2x2 Picture of Foreign National</li>
                                                                     <li>
                                                                         Certified True Copy of the Following (if applicable):
                                                                         <ul>
